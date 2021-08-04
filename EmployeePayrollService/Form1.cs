@@ -115,22 +115,15 @@ namespace EmployeePayrollService
             SalDisp.Text = trcSalary.Value.ToString();
         }
 
-        
-
-        private void StartDate_ValueChanged(object sender, EventArgs e)
+        public void Clear()
         {
-
-        }
-
-        private void Reset_Click(object sender, EventArgs e)
-        {
-            txtName.Clear();        
+            txtName.Clear();
             txtNote.Clear();
             //
 
 
             StartDate.Text = null;
-           
+
             checkBox1.Checked = false;
             checkBox2.Checked = false;
             checkBox3.Checked = false;
@@ -142,7 +135,16 @@ namespace EmployeePayrollService
             Pic4.Checked = false;
             Male.Checked = false;
             Female.Checked = false;
-        
+        }
+
+        private void StartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            Clear();
 
         }
 
@@ -174,7 +176,7 @@ namespace EmployeePayrollService
             connection.Close();
             MessageBox.Show("Employee Registration successful");
 
-
+            Clear();
             Form2 form2 = new Form2();
 
             // Details.DataSource = dtbl;
@@ -183,30 +185,14 @@ namespace EmployeePayrollService
 
         private void Reset1_Click(object sender, EventArgs e)
         {
-            txtName.Clear();
-            txtNote.Clear();
-            //
-
-
-            StartDate.Text = null;
-
-            checkBox1.Checked = false;
-            checkBox2.Checked = false;
-            checkBox3.Checked = false;
-            checkBox4.Checked = false;
-            checkBox5.Checked = false;
-            Pic1.Checked = false;
-            Pic2.Checked = false;
-            Pic3.Checked = false;
-            Pic4.Checked = false;
-            Male.Checked = false;
-            Female.Checked = false;
+            Clear();
+          
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
+            Clear();
             Form2 form2 = new Form2();
-
             form2.Show();
 
         }

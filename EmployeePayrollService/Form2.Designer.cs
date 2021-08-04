@@ -68,7 +68,7 @@ namespace EmployeePayrollService
             this.Details.Name = "Details";
             this.Details.RowHeadersWidth = 51;
             this.Details.RowTemplate.Height = 24;
-            this.Details.Size = new System.Drawing.Size(1183, 290);
+            this.Details.Size = new System.Drawing.Size(1183, 384);
             this.Details.TabIndex = 4;
             this.Details.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Details_CellContentClick);
             // 
@@ -110,7 +110,7 @@ namespace EmployeePayrollService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1207, 515);
+            this.ClientSize = new System.Drawing.Size(1207, 592);
             this.Controls.Add(this.Submit1);
             this.Controls.Add(this.ctvalue);
             this.Controls.Add(this.Details);
