@@ -148,12 +148,12 @@ namespace EmployeePayrollService
 
         private void Submit1_Click(object sender, EventArgs e)
         {
-            //if (!Pic1.Checked && !Pic2.Checked && !Pic3.Checked && !Pic4.Checked )
-            //{
-            //    MessageBox.Show("Please select Profile Image ", "Error");
-            //    return;
+            if (!Pic1.Checked && !Pic2.Checked && !Pic3.Checked && !Pic4.Checked)
+            {
+                MessageBox.Show("Please select Profile Image ", "Error");
+                return;
 
-            //}
+            }
             if (!Male.Checked && !Female.Checked )
             {
                 MessageBox.Show("Please select gender ", "Error");
