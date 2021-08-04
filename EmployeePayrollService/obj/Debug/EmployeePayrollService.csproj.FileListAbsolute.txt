@@ -1,0 +1,11 @@
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\bin\Debug\EmployeePayrollService.exe.config
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\bin\Debug\EmployeePayrollService.exe
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\bin\Debug\EmployeePayrollService.pdb
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.csproj.AssemblyReference.cache
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.Form1.resources
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.Properties.Resources.resources
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.csproj.GenerateResource.cache
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.csproj.CoreCompileInputs.cache
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.exe
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.pdb
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Debug\EmployeePayrollService.Form2.resources
