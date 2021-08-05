@@ -19,9 +19,9 @@ namespace EmployeePayrollService
             InitializeComponent();
             instance = this;
         }
-        string ProfileImage;
-        string Gender;
-        string Department;
+        public string ProfileImage;
+        public string Gender;
+        public string Department;
        
         public static string connectionString = @"Data Source=DESKTOP-4R67M0G\SQLEXPRESS;Initial Catalog=EmpPayrollSystem;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection connection = new SqlConnection(connectionString); 
@@ -30,9 +30,9 @@ namespace EmployeePayrollService
 
         }
 
-        private void txtName_Enter(object sender, EventArgs e)
+        public void txtName_Enter(object sender, EventArgs e)
         {
-            if (txtName.Text== "Your Name ....")
+            if (txtName.Text == "Your Name ....")
             {
                 txtName.Text = "";
 
@@ -40,7 +40,7 @@ namespace EmployeePayrollService
             }
         }
 
-        private void txtName_Leave(object sender, EventArgs e)
+        public void txtName_Leave(object sender, EventArgs e)
         {
             if (txtName.Text == "")
             {
@@ -119,11 +119,7 @@ namespace EmployeePayrollService
         {
             txtName.Clear();
             txtNote.Clear();
-            //
-
-
             StartDate.Text = null;
-
             checkBox1.Checked = false;
             checkBox2.Checked = false;
             checkBox3.Checked = false;
@@ -148,7 +144,7 @@ namespace EmployeePayrollService
 
         }
 
-        private void Submit1_Click(object sender, EventArgs e)
+        public void Submit1_Click(object sender, EventArgs e)
         {
             if (!Pic1.Checked && !Pic2.Checked && !Pic3.Checked && !Pic4.Checked)
             {
@@ -177,9 +173,8 @@ namespace EmployeePayrollService
             MessageBox.Show("Employee Registration successful");
 
             Clear();
-            Form2 form2 = new Form2();
-
-            // Details.DataSource = dtbl;
+            this.Close();
+            Form2 form2 = new Form2();         
             form2.Show();
         }
 
@@ -194,6 +189,36 @@ namespace EmployeePayrollService
             Clear();
             Form2 form2 = new Form2();
             form2.Show();
+            this.Close();
+
+        }
+
+        public void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        Form2 up = new Form2();
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            Form2 up = new Form2();
+            int id2 = up.id;
+            MessageBox.Show(id2.ToString());
+            connection.Open();
+
+            SqlCommand cmd = new SqlCommand("UPDATE [dbo].[Employee] set [Name] ='"+ txtName + "',[ProfileIamge]='"+ ProfileImage+ "',[Gender]='" + Gender + "',[Department]='" + Department + "',[Salary]='" + SalDisp.Text + "',[StartDate]='" + StartDate.Text + "',[Notes]='" + txtNote.Text + "' where ID='"+ id2 + "'", connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Data Update successful");
+           // MessageBox.Show(up.id.ToString());
+            MessageBox.Show(txtName.Text);
+            this.Close();
+            up.Show();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            
 
         }
     }

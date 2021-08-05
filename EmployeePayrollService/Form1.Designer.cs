@@ -59,10 +59,12 @@ namespace EmployeePayrollService
             this.StartDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Update = new EmployeePayrollService.RJButton();
             this.Cancel = new EmployeePayrollService.RJButton();
             this.Reset1 = new EmployeePayrollService.RJButton();
             this.Submit1 = new EmployeePayrollService.RJButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Delete = new EmployeePayrollService.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -114,6 +116,7 @@ namespace EmployeePayrollService
             this.txtName.Size = new System.Drawing.Size(573, 28);
             this.txtName.TabIndex = 3;
             this.txtName.Text = "Your Name ....";
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
@@ -392,6 +395,36 @@ namespace EmployeePayrollService
             this.txtNote.Size = new System.Drawing.Size(691, 92);
             this.txtNote.TabIndex = 28;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Female);
+            this.groupBox1.Controls.Add(this.Male);
+            this.groupBox1.Location = new System.Drawing.Point(354, 297);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(327, 47);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            // 
+            // Update
+            // 
+            this.Update.BackColor = System.Drawing.Color.DarkGray;
+            this.Update.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.Update.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Update.BorderRadius = 10;
+            this.Update.BorderSize = 0;
+            this.Update.FlatAppearance.BorderSize = 0;
+            this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.Color.White;
+            this.Update.Location = new System.Drawing.Point(374, 661);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(145, 40);
+            this.Update.TabIndex = 36;
+            this.Update.Text = "Update";
+            this.Update.TextColor = System.Drawing.Color.White;
+            this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
+            // 
             // Cancel
             // 
             this.Cancel.BackColor = System.Drawing.Color.DarkGray;
@@ -452,15 +485,25 @@ namespace EmployeePayrollService
             this.Submit1.UseVisualStyleBackColor = false;
             this.Submit1.Click += new System.EventHandler(this.Submit1_Click);
             // 
-            // groupBox1
+            // Delete
             // 
-            this.groupBox1.Controls.Add(this.Female);
-            this.groupBox1.Controls.Add(this.Male);
-            this.groupBox1.Location = new System.Drawing.Point(354, 297);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 47);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
+            this.Delete.BackColor = System.Drawing.Color.DarkGray;
+            this.Delete.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.Delete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Delete.BorderRadius = 10;
+            this.Delete.BorderSize = 0;
+            this.Delete.FlatAppearance.BorderSize = 0;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete.ForeColor = System.Drawing.Color.White;
+            this.Delete.Location = new System.Drawing.Point(212, 661);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(145, 40);
+            this.Delete.TabIndex = 37;
+            this.Delete.Text = "Delete";
+            this.Delete.TextColor = System.Drawing.Color.White;
+            this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Form1
             // 
@@ -468,6 +511,8 @@ namespace EmployeePayrollService
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1220, 756);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Update);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Reset1);
@@ -518,39 +563,41 @@ namespace EmployeePayrollService
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton Pic1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.RadioButton Pic2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.RadioButton Pic3;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.RadioButton Pic4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton Male;
-        private System.Windows.Forms.RadioButton Female;
+        public System.Windows.Forms.RadioButton Pic1;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.RadioButton Pic2;
+        public System.Windows.Forms.PictureBox pictureBox4;
+        public System.Windows.Forms.RadioButton Pic3;
+        public System.Windows.Forms.PictureBox pictureBox5;
+        public System.Windows.Forms.RadioButton Pic4;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.RadioButton Male;
+        public System.Windows.Forms.RadioButton Female;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.CheckBox checkBox3;
+        public System.Windows.Forms.CheckBox checkBox4;
+        public System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TrackBar trcSalary;
-        private System.Windows.Forms.Label SalDisp;
+        public System.Windows.Forms.TrackBar trcSalary;
+        public System.Windows.Forms.Label SalDisp;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker StartDate;
+        public System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNote;
+        public System.Windows.Forms.TextBox txtNote;
         private RJButton Submit1;
         private RJButton Reset1;
         private RJButton Cancel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.GroupBox groupBox1;
+        private RJButton Update;
+        private RJButton Delete;
     }
 }
 

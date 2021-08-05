@@ -68,9 +68,13 @@ namespace EmployeePayrollService
             this.Details.Name = "Details";
             this.Details.RowHeadersWidth = 51;
             this.Details.RowTemplate.Height = 24;
+            this.Details.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Details.Size = new System.Drawing.Size(1183, 384);
             this.Details.TabIndex = 4;
+            this.Details.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Details_CellClick);
             this.Details.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Details_CellContentClick);
+            this.Details.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Details_CellDoubleClick);
+            this.Details.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Details_CellMouseDoubleClick);
             // 
             // ctvalue
             // 
@@ -131,7 +135,7 @@ namespace EmployeePayrollService
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Count;
-        private System.Windows.Forms.DataGridView Details;
+        public System.Windows.Forms.DataGridView Details;
         private System.Windows.Forms.Label ctvalue;
         private RJButton Submit1;
     }
