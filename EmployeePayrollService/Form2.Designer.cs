@@ -35,6 +35,7 @@ namespace EmployeePayrollService
             this.Details = new System.Windows.Forms.DataGridView();
             this.ctvalue = new System.Windows.Forms.Label();
             this.Submit1 = new EmployeePayrollService.RJButton();
+            this.DeleteRecord = new EmployeePayrollService.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Details)).BeginInit();
             this.SuspendLayout();
@@ -110,11 +111,32 @@ namespace EmployeePayrollService
             this.Submit1.UseVisualStyleBackColor = false;
             this.Submit1.Click += new System.EventHandler(this.Submit1_Click);
             // 
+            // DeleteRecord
+            // 
+            this.DeleteRecord.BackColor = System.Drawing.Color.YellowGreen;
+            this.DeleteRecord.BackgroundColor = System.Drawing.Color.YellowGreen;
+            this.DeleteRecord.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.DeleteRecord.BorderRadius = 10;
+            this.DeleteRecord.BorderSize = 0;
+            this.DeleteRecord.FlatAppearance.BorderSize = 0;
+            this.DeleteRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteRecord.ForeColor = System.Drawing.Color.White;
+            this.DeleteRecord.Location = new System.Drawing.Point(850, 140);
+            this.DeleteRecord.Name = "DeleteRecord";
+            this.DeleteRecord.Size = new System.Drawing.Size(145, 40);
+            this.DeleteRecord.TabIndex = 34;
+            this.DeleteRecord.Text = "Delete";
+            this.DeleteRecord.TextColor = System.Drawing.Color.White;
+            this.DeleteRecord.UseVisualStyleBackColor = false;
+            this.DeleteRecord.Click += new System.EventHandler(this.DeleteRecord_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 592);
+            this.Controls.Add(this.DeleteRecord);
             this.Controls.Add(this.Submit1);
             this.Controls.Add(this.ctvalue);
             this.Controls.Add(this.Details);
@@ -138,5 +160,6 @@ namespace EmployeePayrollService
         public System.Windows.Forms.DataGridView Details;
         private System.Windows.Forms.Label ctvalue;
         private RJButton Submit1;
+        private RJButton DeleteRecord;
     }
 }

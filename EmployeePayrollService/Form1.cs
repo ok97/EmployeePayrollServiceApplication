@@ -13,18 +13,23 @@ namespace EmployeePayrollService
 {
     public partial class Form1 : Form
     {
-       public static Form1 instance;
+        public static Form1 instance;
+        int idd;
         public Form1()
         {
             InitializeComponent();
             instance = this;
+            // idd= Form2.id;
+            // MessageBox.Show(idd.ToString());
         }
         public string ProfileImage;
         public string Gender;
         public string Department;
-       
+
+        Form2 up = new Form2();
+
         public static string connectionString = @"Data Source=DESKTOP-4R67M0G\SQLEXPRESS;Initial Catalog=EmpPayrollSystem;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        SqlConnection connection = new SqlConnection(connectionString); 
+        SqlConnection connection = new SqlConnection(connectionString);
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -32,6 +37,7 @@ namespace EmployeePayrollService
 
         public void txtName_Enter(object sender, EventArgs e)
         {
+           
             if (txtName.Text == "Your Name ....")
             {
                 txtName.Text = "";
@@ -75,12 +81,12 @@ namespace EmployeePayrollService
             ProfileImage = "Pic4";
         }
 
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        public void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
             Gender = "Male";
         }
 
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        public void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
             Gender = "Female";
         }
@@ -152,7 +158,7 @@ namespace EmployeePayrollService
                 return;
 
             }
-            if (!Male.Checked && !Female.Checked )
+            if (!Male.Checked && !Female.Checked)
             {
                 MessageBox.Show("Please select gender ", "Error");
                 return;
@@ -174,22 +180,23 @@ namespace EmployeePayrollService
 
             Clear();
             this.Close();
-            Form2 form2 = new Form2();         
+            Form2 form2 = new Form2();
             form2.Show();
         }
 
         private void Reset1_Click(object sender, EventArgs e)
         {
             Clear();
-          
+
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
             Clear();
             Form2 form2 = new Form2();
+            
             form2.Show();
-            this.Close();
+            
 
         }
 
@@ -197,29 +204,83 @@ namespace EmployeePayrollService
         {
 
         }
-        Form2 up = new Form2();
+       
 
+        public static string name;
         private void Update_Click(object sender, EventArgs e)
         {
-            Form2 up = new Form2();
-            int id2 = up.id;
-            MessageBox.Show(id2.ToString());
-            connection.Open();
+            idd = Form2.id;
+           // Name = Form2.Name1;
+            //string txtName = name;
+           // MessageBox.Show(idd.ToString());
 
-            SqlCommand cmd = new SqlCommand("UPDATE [dbo].[Employee] set [Name] ='"+ txtName + "',[ProfileIamge]='"+ ProfileImage+ "',[Gender]='" + Gender + "',[Department]='" + Department + "',[Salary]='" + SalDisp.Text + "',[StartDate]='" + StartDate.Text + "',[Notes]='" + txtNote.Text + "' where ID='"+ id2 + "'", connection);
+            connection.Open();
+           // txtName.Text = txtName.Text.Replace("System.Windows.Forms.TextBox, Text: ", string.Empty);
+            SqlCommand cmd = new SqlCommand("UPDATE [dbo].[Employee] set [Name] ='" + txtName.Text + "',[ProfileIamge]='" + ProfileImage + "',[Gender]='" + Gender + "',[Department]='" + Department + "',[Salary]='" + SalDisp.Text + "',[StartDate]='" + StartDate.Text + "',[Notes]='" + txtNote.Text + "' where ID='" + idd + "'", connection);
             cmd.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Data Update successful");
-           // MessageBox.Show(up.id.ToString());
-            MessageBox.Show(txtName.Text);
             this.Close();
             up.Show();
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            
 
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Gender = Form2.Gender;
+            //MessageBox.Show(Gender);
+            Department = Form2.Department;
+            ProfileImage = Form2.ProfileImage;
+            if (Gender == "Male")
+            {
+
+                Male.Checked = true;
+            }
+            if (Gender == "Female")
+            {
+                Female.Checked = true;
+            }
+            if (Department == "HR")
+            {
+                checkBox1.Checked = true;
+            }
+            if (Department == "Sales")
+            {
+                checkBox2.Checked = true;
+            }
+            if (Department == "Finance")
+            {
+                checkBox3.Checked = true;
+            }
+            if (Department == "Engineer")
+            {
+                checkBox4.Checked = true;
+            }
+            if (Department == "Other")
+            {
+                checkBox5.Checked = true;
+            }
+            if (ProfileImage == "Pic1")
+            {
+                Pic1.Checked = true;
+            }
+            if (ProfileImage == "Pic2")
+            {
+                Pic2.Checked = true;
+            } 
+            if (ProfileImage == "Pic3")
+            {
+                Pic3.Checked = true;
+            } 
+            if (ProfileImage == "Pic4")
+            {
+                Pic4.Checked = true;
+            }
         }
     }
 }

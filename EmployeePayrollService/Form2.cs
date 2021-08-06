@@ -14,7 +14,7 @@ namespace EmployeePayrollService
     public partial class Form2 : Form
     {
         public static Form2 instance;
-
+        public static int id;
         public Form2()
         {
             InitializeComponent();
@@ -92,37 +92,48 @@ namespace EmployeePayrollService
             //MessageBox.Show(EmployeID.ToString());
 
         }
-        public int id;
+        public static string Name1;
+        public static string Gender;
+        public static string Department;
+        public static string ProfileImage;
+
         public void Details_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Form1 update = new Form1();
             update.txtName.Text = Details.Rows[e.RowIndex].Cells["Name"].FormattedValue.ToString();
-            update.ProfileImage = Details.Rows[e.RowIndex].Cells["ProfileIamge"].FormattedValue.ToString();
-            update.Gender = Details.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
-            update.Department = Details.Rows[e.RowIndex].Cells["Department"].FormattedValue.ToString();
+            //update.txtName.Text = update.txtName.Text.Replace("System.Windows.Forms.TextBox, Text: ", string.Empty);
+             // Name1 = Details.Rows[e.RowIndex].Cells["Name"].FormattedValue.ToString();
+            ProfileImage = Details.Rows[e.RowIndex].Cells["ProfileIamge"].FormattedValue.ToString();
+            Gender = Details.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
+            Department = Details.Rows[e.RowIndex].Cells["Department"].FormattedValue.ToString();
             update.SalDisp.Text = Details.Rows[e.RowIndex].Cells["Salary"].FormattedValue.ToString();
             update.StartDate.Text = Details.Rows[e.RowIndex].Cells["StartDate"].FormattedValue.ToString();
             update.txtNote.Text = Details.Rows[e.RowIndex].Cells["Notes"].FormattedValue.ToString();
             id = Convert.ToInt32(Details.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());
-
-            
-            MessageBox.Show(id.ToString());
+            MessageBox.Show(update.txtName.Text);
             update.Show();
-            // MessageBox.Show(update.txtName.Text.ToString());
+            
+            
+        
+           
         }
 
         private void Details_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+             id = Convert.ToInt32(Details.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());
+        }
+
+        private void DeleteRecord_Click(object sender, EventArgs e)
+        {
             if (MessageBox.Show("Are You Sure to Delete ?", "Delete record", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                int id = Convert.ToInt32(Details.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());
+            {                
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("delete from [dbo].[Employee] where ID ='" + id + "' ", connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Record Delete successful");
                 DataReload();
-                             
+
 
             }
         }

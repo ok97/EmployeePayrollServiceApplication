@@ -64,7 +64,6 @@ namespace EmployeePayrollService
             this.Cancel = new EmployeePayrollService.RJButton();
             this.Reset1 = new EmployeePayrollService.RJButton();
             this.Submit1 = new EmployeePayrollService.RJButton();
-            this.Delete = new EmployeePayrollService.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -416,7 +415,7 @@ namespace EmployeePayrollService
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update.ForeColor = System.Drawing.Color.White;
-            this.Update.Location = new System.Drawing.Point(374, 661);
+            this.Update.Location = new System.Drawing.Point(360, 661);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(145, 40);
             this.Update.TabIndex = 36;
@@ -436,7 +435,7 @@ namespace EmployeePayrollService
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.ForeColor = System.Drawing.Color.White;
-            this.Cancel.Location = new System.Drawing.Point(534, 661);
+            this.Cancel.Location = new System.Drawing.Point(543, 661);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(145, 40);
             this.Cancel.TabIndex = 34;
@@ -456,7 +455,7 @@ namespace EmployeePayrollService
             this.Reset1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Reset1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reset1.ForeColor = System.Drawing.Color.White;
-            this.Reset1.Location = new System.Drawing.Point(718, 661);
+            this.Reset1.Location = new System.Drawing.Point(725, 661);
             this.Reset1.Name = "Reset1";
             this.Reset1.Size = new System.Drawing.Size(145, 40);
             this.Reset1.TabIndex = 33;
@@ -485,33 +484,12 @@ namespace EmployeePayrollService
             this.Submit1.UseVisualStyleBackColor = false;
             this.Submit1.Click += new System.EventHandler(this.Submit1_Click);
             // 
-            // Delete
-            // 
-            this.Delete.BackColor = System.Drawing.Color.DarkGray;
-            this.Delete.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.Delete.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Delete.BorderRadius = 10;
-            this.Delete.BorderSize = 0;
-            this.Delete.FlatAppearance.BorderSize = 0;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete.ForeColor = System.Drawing.Color.White;
-            this.Delete.Location = new System.Drawing.Point(212, 661);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(145, 40);
-            this.Delete.TabIndex = 37;
-            this.Delete.Text = "Delete";
-            this.Delete.TextColor = System.Drawing.Color.White;
-            this.Delete.UseVisualStyleBackColor = false;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1220, 756);
-            this.Controls.Add(this.Delete);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Cancel);
@@ -548,6 +526,7 @@ namespace EmployeePayrollService
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeePayrollService";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -597,7 +576,6 @@ namespace EmployeePayrollService
         private RJButton Cancel;
         public System.Windows.Forms.GroupBox groupBox1;
         private RJButton Update;
-        private RJButton Delete;
     }
 }
 
