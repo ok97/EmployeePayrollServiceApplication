@@ -572,7 +572,7 @@ namespace EmployeePayrollService
         public System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtNote;
-        private RJButton Submit1;
+        public RJButton Submit1;
         private RJButton Reset1;
         private RJButton Cancel;
         public System.Windows.Forms.GroupBox groupBox1;

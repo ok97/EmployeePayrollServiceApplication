@@ -42,7 +42,7 @@ namespace EmployeePayrollService
             Int32 count = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Dispose();
             connection.Close();
-            ctvalue.Text = count.ToString();
+            ctvalue.Text = count.ToString(); DataReload();
         }
 
         private void value_Click(object sender, EventArgs e)
@@ -69,10 +69,10 @@ namespace EmployeePayrollService
         }
         private void Submit1_Click(object sender, EventArgs e)
         {
-
-            Form1 form1 = new Form1();
-
+            Form1 form1 = new Form1();          
             form1.Show();
+           
+            
         }
         public int EmployeID;
         public void Details_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -109,13 +109,10 @@ namespace EmployeePayrollService
             update.SalDisp.Text = Details.Rows[e.RowIndex].Cells["Salary"].FormattedValue.ToString();
             update.StartDate.Text = Details.Rows[e.RowIndex].Cells["StartDate"].FormattedValue.ToString();
             update.txtNote.Text = Details.Rows[e.RowIndex].Cells["Notes"].FormattedValue.ToString();
-            id = Convert.ToInt32(Details.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());
-            MessageBox.Show(update.txtName.Text);
+            id = Convert.ToInt32(Details.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());    
+            
             update.Show();
-            
-            
-        
-           
+           // (this.Owner as Form1).Submit1.Enabled = true;
         }
 
         private void Details_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -136,6 +133,11 @@ namespace EmployeePayrollService
 
 
             }
+        }
+
+        private void Form2_Activated(object sender, EventArgs e)
+        {
+            DataReload();
         }
     }
 }

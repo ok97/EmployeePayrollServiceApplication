@@ -1,0 +1,11 @@
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\bin\Release\EmployeePayrollService.exe.config
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\bin\Release\EmployeePayrollService.exe
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\bin\Release\EmployeePayrollService.pdb
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.csproj.AssemblyReference.cache
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.Form1.resources
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.Form2.resources
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.Properties.Resources.resources
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.csproj.GenerateResource.cache
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.csproj.CoreCompileInputs.cache
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.exe
+E:\Windows Forms Application\EmployeePayrollService\EmployeePayrollService\obj\Release\EmployeePayrollService.pdb

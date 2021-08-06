@@ -179,25 +179,23 @@ namespace EmployeePayrollService
             MessageBox.Show("Employee Registration successful");
 
             Clear();
-            this.Close();
+          
             Form2 form2 = new Form2();
-            form2.Show();
+           // form2.Show();
+            this.Close();
         }
 
         private void Reset1_Click(object sender, EventArgs e)
         {
             Clear();
-
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
             Clear();
-            Form2 form2 = new Form2();
-            
-            form2.Show();
-            
-
+            Form2 form2 = new Form2();            
+           // form2.Show();
+            this.Close();
         }
 
         public void txtName_TextChanged(object sender, EventArgs e)
@@ -209,19 +207,17 @@ namespace EmployeePayrollService
         public static string name;
         private void Update_Click(object sender, EventArgs e)
         {
-            idd = Form2.id;
-           // Name = Form2.Name1;
-            //string txtName = name;
-           // MessageBox.Show(idd.ToString());
-
-            connection.Open();
-           // txtName.Text = txtName.Text.Replace("System.Windows.Forms.TextBox, Text: ", string.Empty);
+            
+            idd = Form2.id;      
+            connection.Open();          
             SqlCommand cmd = new SqlCommand("UPDATE [dbo].[Employee] set [Name] ='" + txtName.Text + "',[ProfileIamge]='" + ProfileImage + "',[Gender]='" + Gender + "',[Department]='" + Department + "',[Salary]='" + SalDisp.Text + "',[StartDate]='" + StartDate.Text + "',[Notes]='" + txtNote.Text + "' where ID='" + idd + "'", connection);
             cmd.ExecuteNonQuery();
             connection.Close();
-            MessageBox.Show("Data Update successful");
-            this.Close();
-            up.Show();
+            MessageBox.Show("Record Update Successful");           
+          //  up.Show();
+            Close();
+            Form2 form2 = new Form2();
+            form2.DataReload();
         }
 
         private void Delete_Click(object sender, EventArgs e)
