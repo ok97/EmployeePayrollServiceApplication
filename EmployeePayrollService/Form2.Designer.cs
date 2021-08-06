@@ -142,6 +142,7 @@ namespace EmployeePayrollService
             this.Controls.Add(this.Details);
             this.Controls.Add(this.Count);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeePayrollService";
